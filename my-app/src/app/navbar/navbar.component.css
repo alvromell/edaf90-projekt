@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    justify-content: flex-end;
+}
+
+.navbar {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+.title{
+    font-size: 1.7rem;
+}
+
+.navbar a {
+    margin-right: 1.5rem;
+}
+
