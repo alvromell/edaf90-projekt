@@ -1,0 +1,14 @@
+<!-- List of hardcoded stocks -->
+
+<div class="container">
+    <table mat-table class="table">
+        <tbody>
+            <tr  *ngFor="let stock of stocks">
+                <td>{{stock.name}}</td>
+                <span>
+                    <mat-slide-toggle></mat-slide-toggle>  
+                </span>
+            </tr>
+        </tbody>
+    </table>
+</div>
