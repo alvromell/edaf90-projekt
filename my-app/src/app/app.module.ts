@@ -8,6 +8,7 @@ import { StockComponent } from './stock/stock.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModule } from './material.module';
 import { ListComponent } from './list/list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ListComponent } from './list/list.component';
     StockComponent,
     NavbarComponent,
     ListComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

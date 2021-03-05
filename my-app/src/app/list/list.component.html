@@ -6,7 +6,7 @@
             <tr *ngFor="let stock of stocks">
                 <td>{{stock.name}}</td>
                 <span>
-                    <mat-slide-toggle></mat-slide-toggle>  
+                    <mat-slide-toggle (click)="onClick(stock.name)" ></mat-slide-toggle>  
                 </span>
             </tr>
         </tbody>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { stockList } from "../stocklist"
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -11,42 +11,16 @@ export class ListComponent implements OnInit {
 
   constructor() { 
 
-    this.stocks = [
-      {
-        "name": "Aktie 1"
-      },
-      {
-        "name": "Aktie 2"
-      },
-      {
-        "name": "Aktie 3"
-      },
-      {
-        "name": "Aktie 4"
-      },
-      {
-        "name": "Aktie 5"
-      },
-      {
-        "name": "Aktie 6"
-      },
-      {
-        "name": "Aktie 7"
-      },
-      {
-        "name": "Aktie 8"
-      },
-      {
-        "name": "Aktie 9"
-      },
-      {
-        "name": "Aktie 10"
-      },
-
-    ]
+    this.stocks = stockList;
+    console.log(this.stocks)
   }
 
   ngOnInit(): void {
+  }
+
+  onClick(value: any) {
+    console.log("click", value);
+    window.localStorage.setItem(value, 'true');
   }
 
 }
