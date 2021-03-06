@@ -2,7 +2,7 @@
 <table class="table">
     <tbody>
         <tr *ngFor="let stock of stocks">
-            <td>{{stock}}</td>
+            <td><a routerLink="/stock" [queryParams]="{name: stock}">{{stock}}</a></td>
         </tr>
     </tbody>
 </table>
