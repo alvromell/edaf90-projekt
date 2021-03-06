@@ -11,7 +11,14 @@ export class ListComponent implements OnInit {
 
   constructor() { 
 
-    this.stocks = stockList;
+    const newStockState = stockList.reduce((acc, curr) => {
+      console.log(acc, curr.name, window.localStorage.getItem(curr.name));
+      if(window.localStorage.getItem(curr.name) === "true")
+        return [...acc, {name: curr.name, checked: true}];
+      else 
+        return [...acc, {name: curr.name, checked: false}]
+    }, [])
+    this.stocks = newStockState;
     console.log(this.stocks)
   }
 
@@ -20,7 +27,10 @@ export class ListComponent implements OnInit {
 
   onClick(value: any) {
     console.log("click", value);
-    window.localStorage.setItem(value, 'true');
+    if(window.localStorage.getItem(value) === 'true')
+      window.localStorage.setItem(value, 'false');
+    else 
+      window.localStorage.setItem(value, 'true');
   }
 
 }
