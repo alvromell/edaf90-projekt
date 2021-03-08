@@ -3,6 +3,8 @@ import * as $ from 'jquery';
 import * as CanvasJS from '../../assets/canvasjs-stock-1.2.10/canvasjs.stock.min';
 
 import { StockDataService } from '../stock-data.service'
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-stock',
@@ -11,7 +13,7 @@ import { StockDataService } from '../stock-data.service'
 })
 export class StockComponent implements OnInit {
 
-  constructor(private stockData : StockDataService) { }
+  constructor(private stockData : StockDataService, private router: Router) { }
   addSymbols(e){
     var suffixes = ["", "K", "M", "B"];
     var order = Math.max(Math.floor(Math.log(e.value) / Math.log(1000)), 0);
@@ -24,8 +26,12 @@ export class StockComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+    let url = this.router.url;
+    let key:string = url.split("name=").pop()!;
+    console.log(key);
     let data : any[] = [];
-    let prom :  Promise<Response[]> = this.stockData.getTimeSeries(['AAPL'], '1d', '1y');
+    let prom :  Promise<Response[]> = this.stockData.getTimeSeries([key], '1d', '1y');
     prom.then(responses => {data = this.stockData.getStockData(responses);}).then(_ => {
       console.log(data[0].timeStamps[0]);
       let dataPoints1 : any[] = [];
@@ -46,7 +52,7 @@ export class StockComponent implements OnInit {
           text:"Angular StockChart with Price & Volume"
         },
         subtitles: [{
-          text: "ETH/USD"
+          text: key+"/USD"
         }],
         charts: [
           {

@@ -1,9 +1,9 @@
 export const stockList= [
     {
-      "name": "Aktie 1"
+      "name": "IBM"
     },
     {
-      "name": "Aktie 2"
+      "name": "AAPL"
     },
     {
       "name": "Aktie 3"
