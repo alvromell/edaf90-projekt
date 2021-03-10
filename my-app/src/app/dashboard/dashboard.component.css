@@ -1,0 +1,23 @@
+* {
+    margin: 0.05rem;
+    padding: 0.1rem;
+}
+ 
+ 
+.container {
+    display: flex-start;
+    justify-content: left;
+ 
+}
+ 
+.button {
+    color:#006666;
+    padding: 16px 32px;
+    margin: 0.05rem;
+  }
+
+
+tr:nth-child(6n+1),
+tr:nth-child(6n+3),
+tr:nth-child(6n+5)
+{background-color: #e7ecff;}
