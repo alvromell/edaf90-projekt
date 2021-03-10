@@ -4,7 +4,7 @@
     <table class="table">
         <tbody>
             <tr *ngFor="let stock of stocks">
-                <td><a routerLink="/stock" [queryParams]="{name: stock.name}">{{stock.name}}</a></td>
+                <td><a routerLink="/stock" [queryParams]="{name: stock.key}">{{stock.name}}</a></td>
                 <span>
                     <mat-slide-toggle [checked]="stock.checked" (click)="onClick(stock.name)" ></mat-slide-toggle>  
                 </span>

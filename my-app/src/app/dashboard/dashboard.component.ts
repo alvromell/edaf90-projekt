@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
     this.stocks = stockList.reduce((acc, curr) => {
       console.log(acc, curr.name, window.localStorage.getItem(curr.name));
       if(window.localStorage.getItem(curr.name) === "true")
-        return [...acc, curr.name];
+        return [...acc, {name: curr.name, key:curr.key}];
       else 
         return acc
     }, [])

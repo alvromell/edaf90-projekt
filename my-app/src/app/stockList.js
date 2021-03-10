@@ -1,32 +1,18 @@
 export const stockList= [
     {
-      "name": "IBM"
+      "name": "IBM",
+      "key" : "IBM"
     },
     {
-      "name": "AAPL"
+      "name": "Apple",
+      "key": "AAPL"
     },
     {
-      "name": "Aktie 3"
+      "name": "Bitcoin",
+      "key": "BTC-USD"
     },
     {
-      "name": "Aktie 4"
-    },
-    {
-      "name": "Aktie 5"
-    },
-    {
-      "name": "Aktie 6"
-    },
-    {
-      "name": "Aktie 7"
-    },
-    {
-      "name": "Aktie 8"
-    },
-    {
-      "name": "Aktie 9"
-    },
-    {
-      "name": "Aktie 10"
+      "name": "Ethereum",
+      "key": "ETH-USD"
     },
   ]

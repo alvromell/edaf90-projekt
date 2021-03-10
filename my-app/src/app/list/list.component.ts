@@ -12,14 +12,15 @@ export class ListComponent implements OnInit {
   constructor() { 
 
     const newStockState = stockList.reduce((acc, curr) => {
-      console.log(acc, curr.name, window.localStorage.getItem(curr.name));
+      //console.log(acc, curr.name, window.localStorage.getItem(curr.name));
       if(window.localStorage.getItem(curr.name) === "true")
-        return [...acc, {name: curr.name, checked: true}];
+        return [...acc, {name: curr.name, key:curr.key, checked: true}];
       else 
-        return [...acc, {name: curr.name, checked: false}]
+        return [...acc, {name: curr.name, key:curr.key, checked: false}]
     }, [])
     this.stocks = newStockState;
     console.log(this.stocks)
+    console.log("This was printed");
   }
 
   ngOnInit(): void {
