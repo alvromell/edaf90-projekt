@@ -3,6 +3,16 @@
     padding: 0;
 }
 
+.heading {
+    width: fit-content;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+h1{
+    color: #006666;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -10,8 +20,31 @@
 
 .table {
     padding: 1rem;
-    margin-top: 6rem;
+    margin-top: 1rem;
 }
 
+.stock-name{
+    padding: 3px 10px;
+    border: 2px solid transparent;
+}
+
+.stock-name:hover{
+    border: 2px solid #e7ecff;
+    border-radius: 5px;
+    transition:50ms;
+}
+.stock-key{
+    font-size: 0.6rem;
+    color: gray;
+    padding: 0 1rem;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:visited{
+    color: inherit;
+}
 
 
