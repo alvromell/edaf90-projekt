@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModule } from './material.module';
 import { ListComponent } from './list/list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { StockDataService } from './stock-data.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [StockDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
