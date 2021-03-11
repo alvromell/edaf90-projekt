@@ -13,6 +13,10 @@ h1{
     color: #006666;
 }
 
+h4{
+    color:rgb(122, 122, 122);
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -45,6 +49,10 @@ a:link{
 
 a:visited{
     color: inherit;
+}
+
+mat-slide-toggle{
+    color:#006666;
 }
 
 
