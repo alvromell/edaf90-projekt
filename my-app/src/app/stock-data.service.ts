@@ -56,8 +56,17 @@ export class StockDataService {
           stock.high = response.chart.result[0].indicators.quote[0].high;
           stock.low = response.chart.result[0].indicators.quote[0].low;
           stock.volume = response.chart.result[0].indicators.quote[0].volume;
-                
-          this.data.push(stock);
+
+          var found = false;
+          for(var i=0; i<this.data.length; i++){
+            if(this.data[i].ticker === stock.ticker){
+              found = true;
+              this.data[i] = stock;
+            }
+          }
+          if(!found){
+            this.data.push(stock);
+          }
     })});
 
     return prom;

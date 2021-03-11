@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { stockList } from "../stockList"
+import { StockDataService } from '../stock-data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,8 +10,14 @@ import { stockList } from "../stockList"
 export class DashboardComponent implements OnInit {
 
   stocks: any;
+  stockData: any;
 
-  constructor() { 
+  constructor(private stockDataService : StockDataService) { 
+
+    this.stockData = this.stockDataService.getStockData();
+    console.log(this.stockData);
+    
+
     console.log(stockList)
     this.stocks = stockList.reduce((acc, curr) => {
       console.log(acc, curr.name, window.localStorage.getItem(curr.name));
