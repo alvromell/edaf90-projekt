@@ -9,6 +9,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModule } from './material.module';
 import { ListComponent } from './list/list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { NavbarComponentDialog as NavbarComponentDialog } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NavbarComponent,
     ListComponent,
     DashboardComponent,
+    NavbarComponentDialog
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [NavbarComponentDialog]
 })
 export class AppModule { }

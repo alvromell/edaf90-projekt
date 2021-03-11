@@ -1,0 +1,7 @@
+<h1 mat-dialog-title>Inställningar</h1>
+<mat-dialog-content>Vill du rensa alla dina bevakningar?</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-button (click)="clickYes()" mat-dialog-close>Ja</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Nej</button>
+</mat-dialog-actions>
