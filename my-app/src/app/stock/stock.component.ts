@@ -5,10 +5,9 @@ import * as CanvasJS from '../../assets/canvasjs-stock-1.2.10/canvasjs.stock.min
 import { StockDataService } from '../stock-data.service'
 import { Router } from '@angular/router';
 
-import { interval } from 'rxjs/internal/observable/interval';
-import {startWith, switchMap} from "rxjs/operators";
-
 import { OnDestroy } from '@angular/core';
+
+import { stockList } from "../stockList"
 
 
 @Component({
@@ -18,6 +17,7 @@ import { OnDestroy } from '@angular/core';
 })
 export class StockComponent implements OnInit {
   polling_id: any;
+  
 
   constructor(private stockData : StockDataService, private router: Router) { }
   addSymbols(e){
@@ -32,15 +32,15 @@ export class StockComponent implements OnInit {
 
   ngOnDestroy(): void {
     console.log("Polling stopped");
-    if (this.polling_id) {
+    /*if (this.polling_id) {
       clearInterval(this.polling_id);
-    }
+    }*/
   }
   ngOnInit(): void {
     this.chartRender();
-    this.polling_id = setInterval(() => {
+    /*this.polling_id = setInterval(() => {
       this.chartRender();
-    }, 10000);
+    }, 10000);*/
   }
 
   chartRender(): any {
@@ -67,7 +67,8 @@ export class StockComponent implements OnInit {
         theme: "light2",
         exportEnabled: true,
         title:{
-          text:"Angular StockChart with Price & Volume"
+          text:"Price and Volume",
+          
         },
         subtitles: [{
           text: key+"/USD"
@@ -78,7 +79,7 @@ export class StockComponent implements OnInit {
             shared: true
           },
           axisX: {
-            lineThickness: 5,
+            lineThickness: 1,
             tickLength: 0,
             labelFormatter: function(e) {
               return "";
@@ -94,7 +95,7 @@ export class StockComponent implements OnInit {
           axisY: {
             prefix: "$",
             tickLength: 0,
-            title: "Etherium Price",
+            title: key+ " Price",
           },
           legend: {
             verticalAlign: "top"
@@ -104,6 +105,8 @@ export class StockComponent implements OnInit {
             yValueFormatString: "$#,###.##",
             xValueFormatString: "MMM DD YYYY",
             type: "candlestick",
+            risingColor: "#6bb6d6",
+            fallingColor: "#f09068",
             dataPoints : dataPoints1
           }]
         },
@@ -137,7 +140,9 @@ export class StockComponent implements OnInit {
         }],
         navigator: {
           data: [{
+
             dataPoints: dataPoints3
+            
           }],
           slider: {
             //minimum: new Date(data[0].timeStamps[0]),
