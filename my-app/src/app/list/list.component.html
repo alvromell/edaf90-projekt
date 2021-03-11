@@ -1,10 +1,15 @@
 <!-- List of hardcoded stocks -->
+<div class="heading">
+    <h1>Tillgängliga aktier</h1>
+    <h4>Klicka i de aktier du vill bevaka</h4>
+</div>
 
 <div class="container">
     <table class="table">
         <tbody>
             <tr *ngFor="let stock of stocks">
-                <td><a routerLink="/stock" [queryParams]="{name: stock.key}">{{stock.name}}</a></td>
+                <td class="stock-name"><a routerLink="/stock" [queryParams]="{name: stock.key}">{{stock.name}}</a></td>
+                <td class="stock-key">{{stock.key}}</td>
                 <span>
                     <mat-slide-toggle [checked]="stock.checked" (click)="onClick(stock.name)" ></mat-slide-toggle>  
                 </span>
