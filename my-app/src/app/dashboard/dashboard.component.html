@@ -1,8 +1,18 @@
-<p>dashboard works!</p>
+<p style="color:#006666"><b>Bevakade aktier:</b></p>
+<div class="container">
 <table class="table">
     <tbody>
         <tr *ngFor="let stock of stocks">
             <td><a routerLink="/stock" [queryParams]="{name: stock.key}">{{stock.name}}</a></td>
+ 
         </tr>
     </tbody>
 </table>
+ 
+ 
+    <a mat-button class="button" routerLink="choose-stocks">
+        <button mat-stroked-button color="basic">Visa alla</button>
+    </a>
+ 
+ 
+</div>

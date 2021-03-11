@@ -49,8 +49,8 @@ export class StockComponent implements OnInit {
     let key:string = url.split("name=").pop()!;
     console.log(key);
     let data : any[] = [];
-    let prom :  Promise<Response[]> = this.stockData.getTimeSeries([key], '1d', '1y');
-    prom.then(responses => {data = this.stockData.getStockData(responses);}).then(_ => {
+    let prom :  Promise<Response[]> = this.stockData.fetchData([key], '1d', '1y');
+    prom.then(_ => {data = this.stockData.getStockData();
       console.log(data[0].timeStamps[0]);
       let dataPoints1 : any[] = [];
       let dataPoints2 : any[] = [];

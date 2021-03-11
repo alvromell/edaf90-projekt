@@ -10,12 +10,14 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 1em;
+    background-color: #e7ecff;
+    color: #006666
 }
-.title{
+.logo{
     font-size: 1.7rem;
 }
+
 
 .navbar a {
     margin-right: 1.5rem;
 }
-
