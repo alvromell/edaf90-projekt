@@ -13,6 +13,11 @@
 h1{
     color: #006666;
 }
+h2{
+    display: block;
+    padding-left: 1rem;
+    margin-top: 2rem;
+}
 
 .container {
     display: flex-start;
@@ -21,26 +26,38 @@ h1{
 }
 
 .table {
+    max-width: 50%;
     padding: 1rem;
-    margin-top: 1rem;
+
 }
-
-
  
 .button {
     color:#006666;
-    padding: 16px 32px;
-    margin: 0.01rem;
+    margin: 16px 32px;
   }
 
 .lista {
-        padding: 3px 10px;
+        padding: 3px 20px;
         border: 2px solid transparent;
     
 }
 
+th{
+    text-align: center;
+    background-color: #2dbebe29;
+    padding: 5px 20px;
+}
 
-tr:nth-child(6n+1),
-tr:nth-child(6n+3),
-tr:nth-child(6n+5)
+tr:nth-child(2n+1)
 {background-color: #e7ecff;}
+
+a,
+a:visited {
+    color: #006666;
+}
+
+.lista:hover {
+    border-color: #006666;
+    transition: 100ms;
+}
+
