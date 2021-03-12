@@ -32,15 +32,15 @@ export class StockComponent implements OnInit {
 
   ngOnDestroy(): void {
     console.log("Polling stopped");
-    /*if (this.polling_id) {
+    if (this.polling_id) {
       clearInterval(this.polling_id);
-    }*/
+    }
   }
   ngOnInit(): void {
     this.chartRender();
-    /*this.polling_id = setInterval(() => {
+    this.polling_id = setInterval(() => {
       this.chartRender();
-    }, 10000);*/
+    }, 10000);
   }
 
   chartRender(): any {
