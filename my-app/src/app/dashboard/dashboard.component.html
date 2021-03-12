@@ -1,18 +1,29 @@
-<p style="color:#006666"><b>Bevakade aktier:</b></p>
-<div class="container">
-<table class="table">
-    <tbody>
-        <tr *ngFor="let stock of stocks">
-            <td><a routerLink="/stock" [queryParams]="{name: stock.key}">{{stock.name}}</a></td>
- 
-        </tr>
-    </tbody>
-</table>
- 
- 
-    <a mat-button class="button" routerLink="choose-stocks">
-        <button mat-stroked-button color="basic">Visa alla</button>
-    </a>
- 
- 
-</div>
+<body>
+    <div class="stock-wrapper">
+        <h2 style="color:#006666"><b>Bevakade aktier:</b></h2>
+        <div class="container">
+            <table class="table">
+                <tbody>
+                    <tr class="table-heading">
+                        <th>Aktie</th>
+                        <th>Öppning USD</th>
+                        <th>Stängning USD</th>
+                        <th>Daglig förändring</th>
+                    </tr>
+                    <tr *ngFor="let stock of dailyChange">
+                        <td><a routerLink="/stock" [queryParams]="{name: stock.key}">{{stock.key}}</a></td>
+                        <td>{{stock.open}}</td>
+                        <td>{{stock.close}}</td>
+                        <td>{{stock.change}} %</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <a mat-button class="button" routerLink="choose-stocks">
+                <button mat-stroked-button color="basic">Visa alla</button>
+            </a>
+        
+        </div>
+    </div>
+
+</body>
