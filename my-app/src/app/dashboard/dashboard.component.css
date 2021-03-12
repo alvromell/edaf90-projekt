@@ -12,8 +12,12 @@
 
 h1{
     color: #006666;
+    display: block;
+    padding-left: 1rem;
+    margin-top: 2rem;
 }
 h2{
+    color: #006666;
     display: block;
     padding-left: 1rem;
     margin-top: 2rem;
@@ -43,8 +47,10 @@ h2{
 }
 
 th{
+    font-weight: normal;
     text-align: center;
-    background-color: #2dbebe29;
+    background-color: #006666;
+    color:white;
     padding: 5px 20px;
 }
 
