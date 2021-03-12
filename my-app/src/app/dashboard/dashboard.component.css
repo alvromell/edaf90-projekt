@@ -3,18 +3,41 @@
     padding: 0.1rem;
 }
  
- 
+.heading {
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: -3%;
+    justify-content: left;
+}
+
+h1{
+    color: #006666;
+}
+
 .container {
     display: flex-start;
     justify-content: left;
  
 }
+
+.table {
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+
  
 .button {
     color:#006666;
     padding: 16px 32px;
-    margin: 0.05rem;
+    margin: 0.01rem;
   }
+
+.lista {
+        padding: 3px 10px;
+        border: 2px solid transparent;
+    
+}
 
 
 tr:nth-child(6n+1),

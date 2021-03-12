@@ -4,7 +4,7 @@ export const stockList= [
       "key" : "IBM"
     },
     {
-      "name": "Apple",
+      "name": "Apple Inc.",
       "key": "AAPL"
     },
     {
@@ -15,4 +15,29 @@ export const stockList= [
       "name": "Ethereum",
       "key": "ETH-USD"
     },
+    {
+      "name": "Amazon",
+      "key": "AMZN"
+    },
+    {
+      "name": "Facebook",
+      "key": "FB"
+    },
+    {
+      "name": "Nvidia Corp.",
+      "key": "NVDA"
+    },
+    {
+      "name": "Microsoft",
+      "key": "MSFT"
+    },
+    {
+      "name": "Tesla",
+      "key": "TSLA"
+    },
+    {
+      "name": "PayPal",
+      "key": "PYPL"
+    },
+    
   ]

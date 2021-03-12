@@ -35,8 +35,9 @@ export class StockDataService {
       proms.push(fetch(url, {
         "method": "GET",
         "headers": {
-          // Gammal nyckel edc9280856msh632ec66aa03cc39p16dcc2jsn0397f2f0e650
-          "x-rapidapi-key": "03282c9656mshfe94231cee71ae0p19552bjsn60ebd29b4e95",
+          //"x-rapidapi-key": "03282c9656mshfe94231cee71ae0p19552bjsn60ebd29b4e95",
+          //"x-rapidapi-key": "edc9280856msh632ec66aa03cc39p16dcc2jsn0397f2f0e650",
+          "x-rapidapi-key": "46bc96430emsh1cae8bae9a70a3dp1f84e3jsna5efeadafc81",
           "x-rapidapi-host": "yahoo-finance-low-latency.p.rapidapi.com"
         }
       }).then(response => {

@@ -11,7 +11,7 @@
                 <td class="stock-name"><a routerLink="/stock" [queryParams]="{name: stock.key}">{{stock.name}}</a></td>
                 <td class="stock-key">{{stock.key}}</td>
                 <span>
-                    <mat-slide-toggle [checked]="stock.checked" (click)="onClick(stock.name)" ></mat-slide-toggle>  
+                    <mat-slide-toggle color="accent" [checked]="stock.checked" (click)="onClick(stock.name)" ></mat-slide-toggle>  
                 </span>
             </tr>
         </tbody>

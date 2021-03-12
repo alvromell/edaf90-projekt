@@ -10,6 +10,8 @@ import { MaterialModule } from './material.module';
 import { ListComponent } from './list/list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StockDataService } from './stock-data.service';
+import { MatDialogModule } from '@angular/material/dialog';
+import { NavbarComponentDialog as NavbarComponentDialog } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +20,17 @@ import { StockDataService } from './stock-data.service';
     NavbarComponent,
     ListComponent,
     DashboardComponent,
+    NavbarComponentDialog
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    MatDialogModule
   ],
   providers: [StockDataService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [NavbarComponentDialog]
 })
 export class AppModule { }

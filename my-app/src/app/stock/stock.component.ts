@@ -5,6 +5,10 @@ import * as CanvasJS from '../../assets/canvasjs-stock-1.2.10/canvasjs.stock.min
 import { StockDataService } from '../stock-data.service'
 import { Router } from '@angular/router';
 
+import { OnDestroy } from '@angular/core';
+
+import { stockList } from "../stockList"
+
 
 @Component({
   selector: 'app-stock',
@@ -12,6 +16,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./stock.component.css']
 })
 export class StockComponent implements OnInit {
+  polling_id: any;
+  
 
   constructor(private stockData : StockDataService, private router: Router) { }
   addSymbols(e){
@@ -24,9 +30,21 @@ export class StockComponent implements OnInit {
   }
   
 
-
+  ngOnDestroy(): void {
+    console.log("Polling stopped");
+    /*if (this.polling_id) {
+      clearInterval(this.polling_id);
+    }*/
+  }
   ngOnInit(): void {
+    this.chartRender();
+    /*this.polling_id = setInterval(() => {
+      this.chartRender();
+    }, 10000);*/
+  }
 
+  chartRender(): any {
+    console.log("Polling data");
     let url = this.router.url;
     let key:string = url.split("name=").pop()!;
     console.log(key);
@@ -49,7 +67,8 @@ export class StockComponent implements OnInit {
         theme: "light2",
         exportEnabled: true,
         title:{
-          text:"Angular StockChart with Price & Volume"
+          text:"Price and Volume",
+          
         },
         subtitles: [{
           text: key+"/USD"
@@ -60,7 +79,7 @@ export class StockComponent implements OnInit {
             shared: true
           },
           axisX: {
-            lineThickness: 5,
+            lineThickness: 1,
             tickLength: 0,
             labelFormatter: function(e) {
               return "";
@@ -76,7 +95,7 @@ export class StockComponent implements OnInit {
           axisY: {
             prefix: "$",
             tickLength: 0,
-            title: "Etherium Price",
+            title: key+ " Price",
           },
           legend: {
             verticalAlign: "top"
@@ -86,6 +105,8 @@ export class StockComponent implements OnInit {
             yValueFormatString: "$#,###.##",
             xValueFormatString: "MMM DD YYYY",
             type: "candlestick",
+            risingColor: "#6bb6d6",
+            fallingColor: "#f09068",
             dataPoints : dataPoints1
           }]
         },
@@ -119,7 +140,9 @@ export class StockComponent implements OnInit {
         }],
         navigator: {
           data: [{
+
             dataPoints: dataPoints3
+            
           }],
           slider: {
             //minimum: new Date(data[0].timeStamps[0]),
@@ -128,16 +151,7 @@ export class StockComponent implements OnInit {
         }
       });
       chart.render();
-      /*
-      $.getJSON("https://canvasjs.com/data/docs/ethusd2018.json", function(data) {
-        for(var i = 0; i < data.length; i++){
-          dataPoints1.push({x: new Date(data[i].date), y: [Number(data[i].open), Number(data[i].high), Number(data[i].low), Number(data[i].close)]});;
-          dataPoints2.push({x: new Date(data[i].date), y: Number(data[i].volume_usd)});
-          dataPoints3.push({x: new Date(data[i].date), y: Number(data[i].close)});
-        }
-        chart.render();
-      });
-      */
+
     });
   }
 
